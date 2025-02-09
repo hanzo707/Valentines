@@ -1,0 +1,138 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Background */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #ffdde1, #ff80a0);
+    text-align: center;
+    overflow: hidden;
+}
+
+@keyframes moveBackground {
+    0% { background-position: 0 0; }
+    0% { background-position: 100px 100px; }
+}
+
+/* Container */
+.container {
+    position: absolute;
+    z-index: 2;
+    padding: 20px;
+}
+
+/* Animasi teks Valentine */
+h1 {
+    font-size: 2.5em;
+    color: #d63384;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Tombol */
+button {
+    margin-top: 15px;
+    padding: 12px 24px;
+    font-size: 18px;
+    color: white;
+    background-color: #ff4d6d;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #ff1e56;
+    transform: scale(1.1);
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+/* Coklat Valentine */
+#chocolate-box {
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    cursor: pointer;
+}
+
+#chocolate-box img {
+    width: 200px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#chocolate-box img:hover {
+    transform: rotate(-5deg) scale(1.05);
+}
+
+/* Surat Cinta */
+#love-letter {
+    width: 10px;
+    height: 150px;
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.letter-content {
+    font-size: 0.5em;
+    color: #ff1e56;
+}
+
+/* Animasi fade-in */
+.fade-in {
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Efek hati jatuh */
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Responsif */
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+    
+    button {
+        font-size: 16px;
+    }
+
+    #chocolate-box img {
+        width: 150px;
+    }
+
+    #love-letter {
+        width: 200px;
+        height: 130px;
+        font-size: 1em;
+    }
+}
